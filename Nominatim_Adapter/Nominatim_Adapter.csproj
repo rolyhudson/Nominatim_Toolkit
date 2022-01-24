@@ -17,7 +17,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Nominatim_Engine\Nominatim_Engine.csproj" />
-    <ProjectReference Include="..\Nominatim_oM\Nominatim_oM.csproj"/>
+    <ProjectReference Include="..\Nominatim_oM\Nominatim_oM.csproj" />
   </ItemGroup>
 
   <ItemGroup>
@@ -53,9 +53,6 @@
     </Reference>
     <Reference Include="Reflection_Engine">
       <HintPath>C:\ProgramData\BHoM\Assemblies\Reflection_Engine.dll</HintPath>
-    </Reference>
-    <Reference Include="Reflection_oM">
-      <HintPath>C:\ProgramData\BHoM\Assemblies\Reflection_oM.dll</HintPath>
     </Reference>
   </ItemGroup>
 

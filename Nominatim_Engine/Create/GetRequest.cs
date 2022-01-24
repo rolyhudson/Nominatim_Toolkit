@@ -1,6 +1,6 @@
 ﻿using BH.oM.Adapter.Nominatim;
 using BH.oM.Adapters.HTTP;
-using BH.oM.Reflection.Attributes;
+using BH.oM.Base.Attributes;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -24,7 +24,7 @@ namespace BH.Engine.Adapter.Nominatim
         {
             if (String.IsNullOrEmpty(request.FreeFormQuery))
             {
-                Reflection.Compute.RecordError("The freeFormQuery cannot be null or empty.");
+                Base.Compute.RecordError("The freeFormQuery cannot be null or empty.");
                 return null;
             }
 
@@ -52,7 +52,7 @@ namespace BH.Engine.Adapter.Nominatim
         {
             if (request == null)
             {
-                Reflection.Compute.RecordError("The addressSearch cannot be null");
+                Base.Compute.RecordError("The addressSearch cannot be null");
                 return null;
             }
             if (config == null)
@@ -83,7 +83,7 @@ namespace BH.Engine.Adapter.Nominatim
         {
             if (request.Latitude < -90 || request.Latitude > 90 || request.Longitude < -180 || request.Longitude > 180)
             {
-                Reflection.Compute.RecordWarning("The latitude or longitude provided is outside the permitted range. Latitude range is -90 to 90. Longitude range is -180 to 180.");
+                Base.Compute.RecordWarning("The latitude or longitude provided is outside the permitted range. Latitude range is -90 to 90. Longitude range is -180 to 180.");
                 return null;
             }
             if (config == null)
@@ -156,18 +156,18 @@ namespace BH.Engine.Adapter.Nominatim
                 if (resultLimitation.Zoom >= 0 && resultLimitation.Zoom <= 18)
                     request.Parameters.Add("zoom", resultLimitation.Zoom);
                 else
-                    Reflection.Compute.RecordWarning("Zoom level of detail is outside of range (0 to 18), zoom detail is set to 18.");
+                    Base.Compute.RecordWarning("Zoom level of detail is outside of range (0 to 18), zoom detail is set to 18.");
                 return;
             }
 
             if (resultLimitation.Limit > 50)
             {
-                Reflection.Compute.RecordWarning("Maximum result limit is 50, limit set to 50.");
+                Base.Compute.RecordWarning("Maximum result limit is 50, limit set to 50.");
                 request.Parameters.Add("limit", 50);
             }
             else if (resultLimitation.Limit < 0)
             {
-                Reflection.Compute.RecordWarning("Result limit cannot be less than 1, limit set to 1.");
+                Base.Compute.RecordWarning("Result limit cannot be less than 1, limit set to 1.");
                 request.Parameters.Add("limit", 1);
             }
             else

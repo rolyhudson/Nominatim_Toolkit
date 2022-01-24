@@ -20,7 +20,7 @@ namespace BH.Engine.Adapter.Nominatim
         {
             if (customObject.CustomData.ContainsKey("coordinates"))
                 return customObject.CustomData["coordinates"];
-            Reflection.Compute.RecordWarning("Coordinates could not be extracted.");
+            Base.Compute.RecordWarning("Coordinates could not be extracted.");
             return null;
         }
 

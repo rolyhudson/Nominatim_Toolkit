@@ -31,8 +31,5 @@
     <Reference Include="Geospatial_oM">
       <HintPath>C:\ProgramData\BHoM\Assemblies\Geospatial_oM.dll</HintPath>
     </Reference>
-    <Reference Include="Reflection_oM">
-      <HintPath>C:\ProgramData\BHoM\Assemblies\Reflection_oM.dll</HintPath>
-    </Reference>
   </ItemGroup>
 </Project>

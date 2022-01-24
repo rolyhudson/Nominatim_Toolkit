@@ -21,7 +21,7 @@ namespace BH.Engine.Adapter.Nominatim
             string gType = (string)customObject.CustomData["type"];
             if (gType != GeoJSONType)
             {
-                Reflection.Compute.RecordWarning($"Object is not a {GeoJSONType}.");
+                Base.Compute.RecordWarning($"Object is not a {GeoJSONType}.");
                 return false;
             }
             return true;

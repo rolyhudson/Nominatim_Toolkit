@@ -23,7 +23,7 @@ namespace BH.Engine.Adapter.Nominatim
 
             if (fType == null || ((string)fType).ToLower() != "feature")
             {
-                Reflection.Compute.RecordError("Object was not a feature type.");
+                Base.Compute.RecordError("Object was not a feature type.");
                 return null;
             }
 

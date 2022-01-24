@@ -27,7 +27,7 @@ namespace BH.Engine.Adapter.Nominatim
             }
             if (coords.Count < 4)
             {
-                Reflection.Compute.RecordError("Insufficient coordinates to create a bounding box.");
+                Base.Compute.RecordError("Insufficient coordinates to create a bounding box.");
                 return null;
             }
             if (coords.Count == 4)

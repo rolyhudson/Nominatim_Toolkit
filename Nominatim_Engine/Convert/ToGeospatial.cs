@@ -36,7 +36,7 @@ namespace BH.Engine.Adapter.Nominatim
                 case "Feature":
                     return ToFeature(customObject);
             }
-            Reflection.Compute.RecordError("The CustomObject could not be converted to a GeoSpatial Object");
+            Base.Compute.RecordError("The CustomObject could not be converted to a GeoSpatial Object");
             return null;
         }
     }

@@ -28,7 +28,7 @@ namespace BH.Adapter.Nominatim
 
             if(nominatimConfig.OutputFormat != OutputFormat.GeoJSON)
             {
-                BH.Engine.Reflection.Compute.RecordWarning("Output format not yet supported. Defaulting to GeoJSON.");
+                BH.Engine.Base.Compute.RecordWarning("Output format not yet supported. Defaulting to GeoJSON.");
                 nominatimConfig.OutputFormat = OutputFormat.GeoJSON;
             }
 
@@ -48,7 +48,7 @@ namespace BH.Adapter.Nominatim
                     
             }
             else
-                Engine.Reflection.Compute.RecordError("This type of request is not supported.");
+                Engine.Base.Compute.RecordError("This type of request is not supported.");
             return new List<object> { nominationResponse }; 
         }
 
